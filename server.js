@@ -32,7 +32,7 @@ if (stats.isFile()){
     var mimeType = mimeTypes[path.extname(fileName).split(".").reverse()[0]];
     res.writeHead(200, {'Content-type': mimeType});
     
-    var filestream = fs.createReadStream(fileName);
+    var fileStream = fs.createReadStream(fileName);
     fileStream.pipe(res);
 } else if(stats.isDirectory()){
     res.writeHead(302, {
